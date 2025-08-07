@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="ximena-austria">
+  <meta name="description" content="Sobre mi">
+    
+  <title>Sobre mí</title>
+
+  <link href="hoja-de-estilos.css" rel="stylesheet" type="text/css">
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>  
+  <header>
+    <nav class="barra">
+      <ul>
+          <li><a href="index.html.html"><b>inicio</b></a></li>
+          <li><a href="sobre-mi.html"><b>sobre mí</b></a></li>
+          <li><a href="contacto.html"><i>contacto</i></a></li>
+      </ul>
+        </nav>
+      
+      <div style="width:100%; height:60px; background-color:black; font-size: 46px; color: white; font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, 'sans-serif';text-align: center"> Mis diseños </div>
+      
+       <section class="carrusel-diseño">
+  <div class="slider-foto">
+    <button class="prev-foto" onclick="moverfoto(-1)">❮</button>
+    <div class="imagenes-foto">
+      <img src="img/foto1.jpg" alt="foto1">
+      <img src="img/foto2.jpg" alt="foto2">
+      <img src="img/foto3.jpg" alt="foto3">
+     <img src="img/foto4.jpg" alt="foto4">
+    <img src="img/foto5.jpg" alt="foto5">
+    <img src="img/foto6.jpg" alt="foto6">
+    </div>
+    <button class="next-foto" onclick="moverFoto(1)">❯</button>
+    <button class="prev-foto" onclick="moverFoto(-1)">❯</button>
+  </div>
+
+           
+           
+</section>
+      
+      <script>
+    let indiceFoto = 0;
+
+    function moverFoto(direccion) {
+      const carrusel = document.querySelector('.imagenes-foto');
+      const total = carrusel.children.length;
+      indiceFoto += direccion;
+
+      if (indiceFoto < 0) indiceFoto = total - 1;
+      if (indiceFoto >= total) indiceFoto = 0;
+
+      carrusel.style.transform = `translateX(-${indiceFoto * 100}%)`;
+    }
+  </script>
+           
+  </header>
+    </body>
+</html>
+    
